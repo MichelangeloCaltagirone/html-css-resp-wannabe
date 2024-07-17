@@ -1,4 +1,3 @@
-
 @media screen and (max-width: 576px) {
     .row {
         flex-direction: column;
@@ -19,7 +18,12 @@
         margin-top: 2rem;
     }
 }
-
+@media screen and (min-width: 768px) {
+    body::-webkit-scrollbar {
+        display: none;
+        overflow-y: scroll;
+    }    
+}
 @media screen and (max-width: 1140px) {
     .container {
         max-width: 100%;
