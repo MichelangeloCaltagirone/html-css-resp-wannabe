@@ -1,3 +1,4 @@
+/*
 @media screen and (max-width: 576px) {
     .row {
         flex-direction: column;
@@ -29,4 +30,60 @@
         max-width: 100%;
     }
 }
+*/
 
+/*
+   Metedo Dekstop first per le Media query.
+   Dato che abbiamo un codice html che presumibilmente parte 
+   avendo in mente un layout non responsivo e dalle 'medie-grandi'
+   dimensioni, dettate principalmente dalla classe .container
+   (che racchiude tutto il main, nonchè il contenuto
+   pricipale della pagina), avendo una width fissa di 1140px.
+   Partiamo col specificare come si comporta la pagina quando incontra delle
+   viewport più piccole.
+*/
+/* Per non modificare l'html, considero il primo caso in cui il layout,
+   si rompe, ovvero sotto i 1140px fissi del .container
+   Si passerà quindi da uno schermo grande, che potrebbe giustamente
+   aver bisogno di una width fissa(o in percentuale) nel .container, ad uno schermo
+   più piccolo.
+*/
+/* Da schermo Large a Medium */
+@media screen and (max-width: 1140px) {
+    .container {
+        max-width: 100%;
+    }
+}
+/* Dai 768 px in sù, nascondo la barra di navigazione verticale
+   lasciando abilitata la funzione di scorrimento della pagina attravero
+   la rotella del muose o le freccette */
+@media screen and (min-width: 768px) {
+    body::-webkit-scrollbar {
+        display: none;
+        overflow-y: scroll;
+    }    
+}
+/* Per schermi Small (sotto i 576px) */
+@media screen and (max-width: 576px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .row .col {
+        width: 100%;
+    }
+    .steps, .why-us {
+        margin-bottom: 0;
+    }
+    .steps p {
+        margin-bottom: 0.8rem;
+    }
+    .why-us {
+        padding: 3rem 0;
+        background-color: black;
+        text-align: center;
+    }
+    .col-right {
+        margin-top: 2rem;
+    }
+}
